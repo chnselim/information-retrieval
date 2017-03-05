@@ -1,7 +1,0 @@
-[
-{"name": "The Walking Dead", "image": "https://images-na.ssl-images-amazon.com/images/M/MV5BMTczMDk1NDYyMV5BMl5BanBnXkFtZTgwNjE1NDU4MDI@._V1_UX67_CR0,0,67,98_AL_.jpg", "genre": "Drama, Horror, Thriller", "rate": "8.5", "year": "2010", "vote": "679585"},
-{"name": "Legion", "image": "https://images-na.ssl-images-amazon.com/images/M/MV5BMjA3Njc1ODg2MF5BMl5BanBnXkFtZTgwMzYyMjI5MDI@._V1_UX67_CR0,0,67,98_AL_.jpg", "genre": "Action, Drama, Sci-Fi", "rate": "8.8", "year": "2017", "vote": "12471"},
-{"name": "Taboo", "image": "https://images-na.ssl-images-amazon.com/images/M/MV5BMTYyNTQwNzk0OV5BMl5BanBnXkFtZTgwMDAyMDI2MDI@._V1_UX67_CR0,0,67,98_AL_.jpg", "genre": "Drama", "rate": "9.0", "year": "2017", "vote": "34656"},
-{"name": "Big Little Lies", "image": "https://images-na.ssl-images-amazon.com/images/M/MV5BN2VjYmU2NjYtMzgyZi00YmYwLWJhNWUtNTk4ZmRmNWNmZTljL2ltYWdlXkEyXkFqcGdeQXVyNDkzNTM2ODg@._V1_UX67_CR0,0,67,98_AL_.jpg", "genre": "Crime, Drama, Mystery", "rate": "8.5", "year": "2017", "vote": "2271"},
-{"name": "Game of Thrones", "image": "https://images-na.ssl-images-amazon.com/images/M/MV5BMjM5OTQ1MTY5Nl5BMl5BanBnXkFtZTgwMjM3NzMxODE@._V1_UX67_CR0,0,67,98_AL_.jpg", "genre": "Adventure, Drama, Fantasy", "rate": "9.5", "year": "2011", "vote": "1124822"}
-]
