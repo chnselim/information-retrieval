@@ -3,8 +3,10 @@ import scrapy
 
 class ImdbTvseriesSpider(scrapy.Spider):
     name = "imdb_tvseries"
-
-    start_urls = ['http://www.imdb.com/search/title?title_type=tv_series']
+    #http://www.imdb.com/search/title?title_type=tv_series&page=1
+    start_urls = []
+    for c in range(1,3):
+        start_urls.append('http://www.imdb.com/search/title?title_type=tv_series&page={}'.format(c))
 
     def parse(self, response):
         links = response.css("h3.lister-item-header a::attr(href)").extract()
