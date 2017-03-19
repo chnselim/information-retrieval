@@ -1,0 +1,109 @@
+{{extend 'template.html'}}
+
+
+<!-- Section -->
+<section>
+  <header style="margin-top:-50px;">
+    <h2>All TV Series</h2>
+  </header>
+  <div class="posts">
+    <article>
+      <a href="#" class="image"><img style="height: 40%; width: 40%;" src="" alt="" /></a>
+      <h3>HEADING</h3>
+      <p style="width: 70%">SUMMARY</p>
+          <ul class="actions">
+        <li><a href="#" class="button">More</a></li>
+      </ul>
+    </article>
+
+  </div>
+</section>
+
+</div>
+</div>
+
+<!-- Sidebar -->
+<div id="sidebar">
+<div class="inner">
+<!-- Menu -->
+<nav id="menu">
+
+  <header class="major">
+    <h2>Search & Filter</h2>
+  </header>
+  <!-- Search -->
+    <!-- <section id="search" class="alt">
+      <form method="post" action="#">
+        <input type="text" name="query" id="query" placeholder="Search" />
+      </form>
+    </section> -->
+
+  <!-- Form -->
+    <form method="post" action="{{=URL('default', 'details')}}">
+      <div class="row uniform">
+        <div class="12u$ 12u$(xsmall)">
+          <input type="text" name="demo-name" id="demo-name" value="" placeholder="Search" />
+        </div>
+        <!-- Break -->
+        <div class="12u$">
+          <div class="select-wrapper">
+            <select name="demo-category" id="demo-category">
+              <option value="">- Category -</option>
+              <option value="1">Manufacturing</option>
+              <option value="1">Shipping</option>
+              <option value="1">Administration</option>
+              <option value="1">Human Resources</option>
+            </select>
+          </div>
+        </div>
+        <!-- Break -->
+        <div class="4u 12u$(small)">
+          <input type="radio" id="demo-priority-low" name="demo-priority" checked>
+          <label for="demo-priority-low">Before 2000</label>
+        </div>
+        <div class="4u 12u$(small)">
+          <input type="radio" id="demo-priority-normal" name="demo-priority">
+          <label for="demo-priority-normal">2000s</label>
+        </div>
+        <div class="4u$ 12u$(small)">
+          <input type="radio" id="demo-priority-high" name="demo-priority">
+          <label for="demo-priority-high">This Year</label>
+        </div>
+        <!-- Break -->
+        <div class="4u 12u$(small)">
+          <input type="checkbox" id="demo-copy" name="demo-copy">
+          <label for="demo-copy">7.0+</label>
+        </div>
+        <div class="4u 12u$(small)">
+          <input type="checkbox" id="demo-human" name="demo-human" checked>
+          <label for="demo-human">8.0+</label>
+        </div>
+        <div class="4u$ 12u$(small)">
+          <input type="checkbox" id="demo-copy" name="demo-copy">
+          <label for="demo-copy">9.0+</label>
+        </div>
+
+        <!-- Break -->
+        <div class="12u$">
+          <ul class="actions">
+            <li><input type="submit" value="Search" class="special" /></li>
+            <li><input type="reset" value="Reset" /></li>
+          </ul>
+        </div>
+      </div>
+    </form>
+
+
+  <ul>
+    <li><a href="index.html">Homepage</a></li>
+    <li><a href="elements.html">Elements</a></li>
+    <li>
+      <span class="opener">Category</span>
+      <ul>
+        <li><a href="#">Action</a></li>
+        <li><a href="#">Drama</a></li>
+        <li><a href="#">Thriller</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>

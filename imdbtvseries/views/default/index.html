@@ -1,127 +1,209 @@
-{{extend 'template.html'}}
-
-<!-- Wrapper -->
-  <div id="wrapper">
-
-    <!-- Main -->
-      <div id="main">
-        <div class="inner">
-
-          <!-- Header -->
-            <header id="header">
-              <a href="index.html" class="logo">Cihan SELİM</a>
-              <ul class="icons">
-                <li><a href="#" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
-                <li><a href="#" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
-                <li><a href="#" class="icon fa-snapchat-ghost"><span class="label">Snapchat</span></a></li>
-                <li><a href="#" class="icon fa-instagram"><span class="label">Instagram</span></a></li>
-                <li><a href="#" class="icon fa-medium"><span class="label">Medium</span></a></li>
-              </ul>
-            </header>
-
-          <!-- Section -->
-            <section>
-              <header>
-                <h2>All TV Series</h2>
-              </header>
-              <div class="posts">
-                  <article>
-                    <a href="#" class="image"><img style="height: 40%; width:40%;" src="{{=data[0]['image']}}" alt="" /></a>
-                    <h3>{{=data[0]['name']}}</h3>
-                    <p style="width: 60%">{{=data[0]['summary']}}</p>
-                        <ul class="actions">
-                      <li><a href="#" class="button">More</a></li>
-                    </ul>
-                  </article>
-
-              </div>
-            </section>
-
-        </div>
-      </div>
-
-    <!-- Sidebar -->
-      <div id="sidebar">
-        <div class="inner">
-          <!-- Menu -->
-            <nav id="menu">
-
-              <header class="major">
-                <h2>Search & Filter | Maybe Logo</h2>
-              </header>
-              <!-- Search -->
-                <!-- <section id="search" class="alt">
-                  <form method="post" action="#">
-                    <input type="text" name="query" id="query" placeholder="Search" />
-                  </form>
-                </section> -->
-
-              <!-- Form -->
-                <form method="post" action="#">
-                  <div class="row uniform">
-                    <div class="12u$ 12u$(xsmall)">
-                      <input type="text" name="demo-name" id="demo-name" value="" placeholder="Search" />
-                    </div>
-                    <!-- Break -->
-                    <div class="12u$">
-                      <div class="select-wrapper">
-                        <select name="demo-category" id="demo-category">
-                          <option value="">- Category -</option>
-                          <option value="1">Manufacturing</option>
-                          <option value="1">Shipping</option>
-                          <option value="1">Administration</option>
-                          <option value="1">Human Resources</option>
-                        </select>
-                      </div>
-                    </div>
-                    <!-- Break -->
-                    <div class="4u 12u$(small)">
-                      <input type="radio" id="demo-priority-low" name="demo-priority" checked>
-                      <label for="demo-priority-low">Before 2000</label>
-                    </div>
-                    <div class="4u 12u$(small)">
-                      <input type="radio" id="demo-priority-normal" name="demo-priority">
-                      <label for="demo-priority-normal">2000s</label>
-                    </div>
-                    <div class="4u$ 12u$(small)">
-                      <input type="radio" id="demo-priority-high" name="demo-priority">
-                      <label for="demo-priority-high">This Year</label>
-                    </div>
-                    <!-- Break -->
-                    <div class="4u 12u$(small)">
-                      <input type="checkbox" id="demo-copy" name="demo-copy">
-                      <label for="demo-copy">7.0+</label>
-                    </div>
-                    <div class="4u 12u$(small)">
-                      <input type="checkbox" id="demo-human" name="demo-human" checked>
-                      <label for="demo-human">8.0+</label>
-                    </div>
-                    <div class="4u$ 12u$(small)">
-                      <input type="checkbox" id="demo-copy" name="demo-copy">
-                      <label for="demo-copy">9.0+</label>
-                    </div>
-
-                    <!-- Break -->
-                    <div class="12u$">
-                      <ul class="actions">
-                        <li><input type="submit" value="Search" class="special" /></li>
-                        <li><input type="reset" value="Reset" /></li>
-                      </ul>
-                    </div>
-                  </div>
-                </form>
 
 
-              <ul>
-                <li><a href="index.html">Homepage</a></li>
-                <li><a href="elements.html">Elements</a></li>
-                <li>
-                  <span class="opener">Category</span>
-                  <ul>
-                    <li><a href="#">Action</a></li>
-                    <li><a href="#">Drama</a></li>
-                    <li><a href="#">Thriller</a></li>
-                  </ul>
-                </li>
-              </ul>
-            </nav>
+<!DOCTYPE HTML>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="{{=URL('static/template1','assets/css/main.css')}}" />
+  </head>
+  <body>
+
+    <!-- Header -->
+      <header style="" align="center" id="header">
+        <!--<h2>IMDb TV Series</h2>-->
+        <img src="{{=URL('static/template1','assets/images/logo.png')}}" style="width: 8%;" />
+        <p style="margin-top: 10px; ">Most Popular TV Series</p>
+      </header>
+
+    <!-- Signup Form -->
+      <form id="signup-form" method="post" action="#">
+        <input type="email" name="email" id="email" placeholder="Search..." />
+        
+        <!-- <input style="margin-top: 10px; width: 8.3em" type="reset" value="Show All" /> -->
+      </form>
+
+    <!-- Footer 
+      <footer style="" align="center" id="footer">
+        <ul class="icons">
+          <li><a href="#" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
+          <li><a href="#" class="icon fa-instagram"><span class="label">Instagram</span></a></li>
+          <li><a href="#" class="icon fa-github"><span class="label">GitHub</span></a></li>
+          <li><a href="#" class="icon fa-envelope-o"><span class="label">Email</span></a></li>
+        </ul>
+      </footer>-->
+
+    <!-- Script -->
+      <script>
+          (function() {
+
+            "use strict";
+
+            // Methods/polyfills.
+
+              // classList | (c) @remy | github.com/remy/polyfills | rem.mit-license.org
+                !function(){function t(t){this.el=t;for(var n=t.className.replace(/^\s+|\s+$/g,"").split(/\s+/),i=0;i<n.length;i++)e.call(this,n[i])}function n(t,n,i){Object.defineProperty?Object.defineProperty(t,n,{get:i}):t.__defineGetter__(n,i)}if(!("undefined"==typeof window.Element||"classList"in document.documentElement)){var i=Array.prototype,e=i.push,s=i.splice,o=i.join;t.prototype={add:function(t){this.contains(t)||(e.call(this,t),this.el.className=this.toString())},contains:function(t){return-1!=this.el.className.indexOf(t)},item:function(t){return this[t]||null},remove:function(t){if(this.contains(t)){for(var n=0;n<this.length&&this[n]!=t;n++);s.call(this,n,1),this.el.className=this.toString()}},toString:function(){return o.call(this," ")},toggle:function(t){return this.contains(t)?this.remove(t):this.add(t),this.contains(t)}},window.DOMTokenList=t,n(Element.prototype,"classList",function(){return new t(this)})}}();
+
+              // canUse
+                window.canUse=function(p){if(!window._canUse)window._canUse=document.createElement("div");var e=window._canUse.style,up=p.charAt(0).toUpperCase()+p.slice(1);return p in e||"Moz"+up in e||"Webkit"+up in e||"O"+up in e||"ms"+up in e};
+
+              // window.addEventListener
+                (function(){if("addEventListener"in window)return;window.addEventListener=function(type,f){window.attachEvent("on"+type,f)}})();
+
+            // Vars.
+              var $body = document.querySelector('body');
+
+            // Disable animations/transitions until everything's loaded.
+              $body.classList.add('is-loading');
+
+              window.addEventListener('load', function() {
+                window.setTimeout(function() {
+                  $body.classList.remove('is-loading');
+                }, 100);
+              });
+
+            // Slideshow Background.
+              (function() {
+
+                // Settings.
+                  var settings = {
+
+                    // Images (in the format of 'url': 'alignment').
+                      images: {
+                        '{{=URL('static/template1','assets/images/bg13.jpg')}}': 'center',
+                        '{{=URL('static/template1','assets/images/bg2.jpg')}}': 'center',
+                        '{{=URL('static/template1','assets/images/bg7.jpg')}}': 'center',
+                        '{{=URL('static/template1','assets/images/bg11.jpg')}}': 'center',
+                        '{{=URL('static/template1','assets/images/bg12.jpg')}}': 'center'
+                      },
+
+                    // Delay.
+                      delay: 6000
+
+                  };
+
+                // Vars.
+                  var pos = 0, lastPos = 0,
+                    $wrapper, $bgs = [], $bg,
+                    k, v;
+
+                // Create BG wrapper, BGs.
+                  $wrapper = document.createElement('div');
+                    $wrapper.id = 'bg';
+                    $body.appendChild($wrapper);
+
+                  for (k in settings.images) {
+
+                    // Create BG.
+                      $bg = document.createElement('div');
+                        $bg.style.backgroundImage = 'url("' + k + '")';
+                        $bg.style.backgroundPosition = settings.images[k];
+                        $wrapper.appendChild($bg);
+
+                    // Add it to array.
+                      $bgs.push($bg);
+
+                  }
+
+                // Main loop.
+                  $bgs[pos].classList.add('visible');
+                  $bgs[pos].classList.add('top');
+
+                  // Bail if we only have a single BG or the client doesn't support transitions.
+                    if ($bgs.length == 1
+                    ||  !canUse('transition'))
+                      return;
+
+                  window.setInterval(function() {
+
+                    lastPos = pos;
+                    pos++;
+
+                    // Wrap to beginning if necessary.
+                      if (pos >= $bgs.length)
+                        pos = 0;
+
+                    // Swap top images.
+                      $bgs[lastPos].classList.remove('top');
+                      $bgs[pos].classList.add('visible');
+                      $bgs[pos].classList.add('top');
+
+                    // Hide last image after a short delay.
+                      window.setTimeout(function() {
+                        $bgs[lastPos].classList.remove('visible');
+                      }, settings.delay / 2);
+
+                  }, settings.delay);
+
+              })();
+
+            // Signup Form.
+              (function() {
+
+                // Vars.
+                  var $form = document.querySelectorAll('#signup-form')[0],
+                    $submit = document.querySelectorAll('#signup-form input[type="submit"]')[0],
+                    $message;
+
+                // Bail if addEventListener isn't supported.
+                  if (!('addEventListener' in $form))
+                    return;
+
+                // Message.
+                  $message = document.createElement('span');
+                    $message.classList.add('message');
+                    $form.appendChild($message);
+
+                  $message._show = function(type, text) {
+
+                    $message.innerHTML = text;
+                    $message.classList.add(type);
+                    $message.classList.add('visible');
+
+                    window.setTimeout(function() {
+                      $message._hide();
+                    }, 3000);
+
+                  };
+
+                  $message._hide = function() {
+                    $message.classList.remove('visible');
+                  };
+
+                // Events.
+                // Note: If you're *not* using AJAX, get rid of this event listener.
+                  $form.addEventListener('submit', function(event) {
+
+                    event.stopPropagation();
+                    event.preventDefault();
+
+                    // Hide message.
+                      $message._hide();
+
+                    // Disable submit.
+                      $submit.disabled = true;
+
+                    // Process form.
+                    // Note: Doesn't actually do anything yet (other than report back with a "thank you"),
+                    // but there's enough here to piece together a working AJAX submission call that does.
+                      window.setTimeout(function() {
+
+                        // Reset form.
+                          $form.reset();
+
+                        // Enable submit.
+                          $submit.disabled = false;
+                        
+
+                      }, 750);
+
+                  });
+
+              })();
+
+          })();
+      </script>
+
+  </body>
+</html>
