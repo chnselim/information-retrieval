@@ -1,24 +1,56 @@
 {{extend 'template.html'}}
 
-
 <!-- Section -->
 <section>
-  <header style="margin-top:-50px;">
-    <h2>All TV Series</h2>
-  </header>
-  <div class="posts">
-    <article>
-      <a href="#" class="image"><img style="height: 40%; width: 40%;" src="" alt="" /></a>
-      <h3>HEADING</h3>
-      <p style="width: 70%">SUMMARY</p>
-          <ul class="actions">
-        <li><a href="#" class="button">More</a></li>
-      </ul>
-    </article>
 
-  </div>
+	<div class="posts">
+		<article>
+			<a href="#" class="image"><img src="{{=URL('static/template','images/pic01.jpg')}}" alt="" /></a>
+			<h3>Interdum aenean</h3>
+			<p>Aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore. Proin aliquam facilisis ante interdum. Sed nulla amet lorem feugiat tempus aliquam.</p>
+			<ul class="actions">
+				<li><a href="#" class="button">More</a></li>
+			</ul>
+		</article>
+		<article>
+			<a href="#" class="image"><img src="{{=URL('static/template','images/pic01.jpg')}}" alt="" /></a>
+			<h3>Interdum aenean</h3>
+			<p>Aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore. Proin aliquam facilisis ante interdum. Sed nulla amet lorem feugiat tempus aliquam.</p>
+			<ul class="actions">
+				<li><a href="#" class="button">More</a></li>
+			</ul>
+		</article>
+		<article>
+			<a href="#" class="image"><img src="{{=URL('static/template','images/pic01.jpg')}}" alt="" /></a>
+			<h3>Interdum aenean</h3>
+			<p>Aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore. Proin aliquam facilisis ante interdum. Sed nulla amet lorem feugiat tempus aliquam.</p>
+			<ul class="actions">
+				<li><a href="#" class="button">More</a></li>
+			</ul>
+		</article>
+
+	</div>
+	
 </section>
 
+<section>
+	<div class="row 200%">
+		<div class="6u 12u$(medium)">
+			<ul class="pagination">
+				<li><span class="button disabled">Prev</span></li>
+				<li><a href="#" class="page active">1</a></li>
+				<li><a href="#" class="page">2</a></li>
+				<li><a href="#" class="page">3</a></li>
+				<li><span>&hellip;</span></li>
+				<li><a href="#" class="page">8</a></li>
+				<li><a href="#" class="page">9</a></li>
+				<li><a href="#" class="page">10</a></li>
+				<li><a href="#" class="button">Next</a></li>
+			</ul>
+		</div>
+	</div>
+</section>
+	
 </div>
 </div>
 
@@ -28,82 +60,72 @@
 <!-- Menu -->
 <nav id="menu">
 
-  <header class="major">
-    <h2>Search & Filter</h2>
-  </header>
-  <!-- Search -->
-    <!-- <section id="search" class="alt">
-      <form method="post" action="#">
-        <input type="text" name="query" id="query" placeholder="Search" />
-      </form>
-    </section> -->
+	<header class="">
+		<h2>Search & Filter</h2><hr>
+	</header>
 
-  <!-- Form -->
-    <form method="post" action="{{=URL('default', 'details')}}">
-      <div class="row uniform">
-        <div class="12u$ 12u$(xsmall)">
-          <input type="text" name="demo-name" id="demo-name" value="" placeholder="Search" />
-        </div>
-        <!-- Break -->
-        <div class="12u$">
-          <div class="select-wrapper">
-            <select name="demo-category" id="demo-category">
-              <option value="">- Category -</option>
-              <option value="1">Manufacturing</option>
-              <option value="1">Shipping</option>
-              <option value="1">Administration</option>
-              <option value="1">Human Resources</option>
-            </select>
-          </div>
-        </div>
-        <!-- Break -->
-        <div class="4u 12u$(small)">
-          <input type="radio" id="demo-priority-low" name="demo-priority" checked>
-          <label for="demo-priority-low">Before 2000</label>
-        </div>
-        <div class="4u 12u$(small)">
-          <input type="radio" id="demo-priority-normal" name="demo-priority">
-          <label for="demo-priority-normal">2000s</label>
-        </div>
-        <div class="4u$ 12u$(small)">
-          <input type="radio" id="demo-priority-high" name="demo-priority">
-          <label for="demo-priority-high">This Year</label>
-        </div>
-        <!-- Break -->
-        <div class="4u 12u$(small)">
-          <input type="checkbox" id="demo-copy" name="demo-copy">
-          <label for="demo-copy">7.0+</label>
-        </div>
-        <div class="4u 12u$(small)">
-          <input type="checkbox" id="demo-human" name="demo-human" checked>
-          <label for="demo-human">8.0+</label>
-        </div>
-        <div class="4u$ 12u$(small)">
-          <input type="checkbox" id="demo-copy" name="demo-copy">
-          <label for="demo-copy">9.0+</label>
-        </div>
-
-        <!-- Break -->
-        <div class="12u$">
-          <ul class="actions">
-            <li><input type="submit" value="Search" class="special" /></li>
-            <li><input type="reset" value="Reset" /></li>
-          </ul>
-        </div>
-      </div>
-    </form>
+	<!-- Form -->
+		<form method="post" action="#">
+			<div class="row uniform">
+				<div class="12u$ 12u$(xsmall)">
+					<input type="text" name="demo-name" id="demo-name" value="" placeholder="Search" />
+				</div>
+				<!-- Break -->
+				<div class="12u$">
+					<div class="select-wrapper">
+						<select name="demo-category" id="demo-category">
+							<option value="">- Category -</option>
+							<option value="1">Manufacturing</option>
+							<option value="1">Shipping</option>
+							<option value="1">Administration</option>
+							<option value="1">Human Resources</option>
+						</select>
+					</div>
+				</div>
+				<!-- Break -->
+				<div class="4u 12u$(small)">
+					<input type="radio" id="demo-priority-low" name="demo-priority"> <!--checked-->
+					<label for="demo-priority-low">Before 2000</label>
+				</div>
+				<div class="4u 12u$(small)">
+					<input type="radio" id="demo-priority-normal" name="demo-priority">
+					<label for="demo-priority-normal">2000s</label>
+				</div>
+				<div class="4u$ 12u$(small)">
+					<input type="radio" id="demo-priority-high" name="demo-priority">
+					<label for="demo-priority-high">This Year</label>
+				</div>
+				<!-- Break -->
+				<div class="4u 12u$(small)">
+					<input type="checkbox" id="demo-copy" name="demo-copy">
+					<label for="demo-copy">7.0+</label>
+				</div>
+				<div class="4u 12u$(small)">
+					<input type="checkbox" id="demo-human" name="demo-human">
+					<label for="demo-human">8.0+</label>
+				</div>
+				<div class="4u$ 12u$(small)">
+					<input type="checkbox" id="demo-copy" name="demo-copy">
+					<label for="demo-copy">9.0+</label>
+				</div>
 
 
-  <ul>
-    <li><a href="index.html">Homepage</a></li>
-    <li><a href="elements.html">Elements</a></li>
-    <li>
-      <span class="opener">Category</span>
-      <ul>
-        <li><a href="#">Action</a></li>
-        <li><a href="#">Drama</a></li>
-        <li><a href="#">Thriller</a></li>
-      </ul>
-    </li>
-  </ul>
+				<!-- Break -->
+				<div class="12u$">
+					<ul class="actions">
+						<li><input type="submit" value="Search" class="special" /></li>
+						<li><input type="reset" value="Reset" /></li>
+					</ul>
+				</div>
+			</div>
+		</form>
+
+
+
 </nav>
+
+
+</div>
+</div>
+
+</div>
