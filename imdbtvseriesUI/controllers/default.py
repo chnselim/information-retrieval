@@ -20,6 +20,7 @@ def search():
     search_result_url = "http://127.0.0.1:8983/solr/imdb/select?indent=on&q={1}&fq=genre:{0}&fq=year:{3}&fq=rate:{4}&rows=12&facet=true&facet.field=genre&facet.field=year&start={2}&wt=json".format(genre, search_query, (int(page)-1)*12, year, rate)
     search_response = urllib.urlopen(search_result_url)
     search_result = json.loads(search_response.read())
+    print(search_result['facet_counts']['facet_fields'])
     return locals()
 
 def details():

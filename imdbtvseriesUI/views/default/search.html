@@ -1,28 +1,32 @@
 {{extend 'template.html'}}
 
-            <header id="header">
-              <a class="logo">
-                <em style="font-style: inherit;color:#424242;">
-                {{=search_result['response']['numFound']}}</em> 
-                <em style="font-style: inherit;color:#757575;">
-                results for </em> 
-                <em style="text-transform: uppercase;font-style: inherit;color:#424242;">{{=search_result['responseHeader']['params']['q'].split(" AND ")[-1]}}
-                </em>
-              </a>
-                <ul class="icons">
-                  <li><a href="https://www.twitter.com/chnselim" class="icon fa-twitter" target="_blank"><span class="label">Twitter</span></a></li>
-                  <li><a href="https://www.instagram.com/chnselim" class="icon fa-instagram" target="_blank"><span class="label">Instagram</span></a></li>
-                  <li><a href="https://www.github.com/chnselim" class="icon fa-github" target="_blank"><span class="label">Github</span></a></li>
-                </ul>
-            </header>
+<!-- Num Found - Social Media -->
 
-<!-- Section -->
+<header id="header">
+  	<a class="logo">
+	    <em style="font-style: inherit;color:#424242;">
+	    {{=search_result['response']['numFound']}}</em> 
+	    <em style="font-style: inherit;color:#757575;">
+	    results for </em> 
+	    <em style="text-transform: uppercase;font-style: inherit;color:#424242;">{{=search_result['responseHeader']['params']['q'].split(" AND ")[-1]}}
+	    </em>
+ 	</a>
+	<ul class="icons">
+		<em style="text-transform: uppercase;font-style: inherit;color:#424242;">
+			{{=search_result['responseHeader']['params']['fq'][0]}} |
+			{{=search_result['responseHeader']['params']['fq'][1]}} |
+			{{=search_result['responseHeader']['params']['fq'][2]}}
+		</em>
+	</ul>
+</header>
+
+<!-- Tv Series -->
+
 <section>
-
 	<div class="posts">
 	{{for i in search_result['response']['docs']:}}
 		<article align="center">
-			<a href="#" class="image"><img src="{{=i['image'][0] or ""}}" style="width: 45%; margin:auto;" alt="" /></a>
+			<a href="{{=URL('default', 'details', args=i['id'])}}" class="image"><img src="{{=i['image'][0] or ""}}" style="width: 45%; margin:auto;" alt="" /></a>
 			
 			<h3>{{=i['name'] or ""}}</h3>
 			<p style="overflow: hidden;display: -webkit-box;-webkit-line-clamp: 2;-webkit-box-orient: vertical;">{{=i['summary'][0] or ""}}</p>
@@ -30,86 +34,77 @@
 			<ul class="actions">
 				<li><a href="{{=URL('default', 'details', args=i['id'])}}" class="button">More</a></li>
 			</ul>
-			
-
-
 		</article>
 	{{pass}}
 	</div>
-	
 </section>
 
+<!-- Pagination -->
+
+{{if search_result['response']['numFound'] > 12:}}
 <section>
+	<ul class="pagination" style="margin-left: 35%">
+	{{if int(page) == 1:}}
+		<li ><span href="#" class="button disabled">Prev</span></li>
+	{{else:}}
+		<li ><a href="{{=URL('default', 'search', args=int(page)-1) }}?q={{=request.vars.q}}"><span class="button">Prev</span></a></li>
+	{{pass}}
 
-			<ul class="pagination" style="margin-left: 35%">
-			{{if int(page) == 1:}}
-				<li ><span href="#" class="button disabled">Prev</span></li>
-			{{else:}}
-				<li ><a href="{{=URL('default', 'search', args=int(page)-1) }}?q={{=request.vars.q}}"><span class="button">Prev</span></a></li>
-			{{pass}}
-				{{print(search_result['response']['numFound'])}}
-				{{import math}}
-				{{upper_limit = int(math.ceil(search_result['response']['numFound']/12.0))}}
-				{{if int(page)+9 < upper_limit:}}
-					{{for i in range(int(page)-1,int(page)+9):}}
-					<li><a href="{{=URL('default', 'search', args=i+1)}}?q={{=request.vars.q}}">{{=i+1}}</a></li>
-					{{pass}}
-				{{else:}}
-					{{for i in range(int(math.ceil(search_result['response']['numFound']/12.0))):}}
-					<li><a href="{{=URL('default', 'search', args=i+1)}}?q={{=request.vars.q}}">{{=i+1}}</a></li>
-					{{pass}}
-				{{pass}}
-				{{if int(math.ceil(search_result['response']['numFound']/12.0)) == int(page):}}
-				<li ><span href="#" class="button disabled">Next</span></li>
-				{{else:}}
-				<li><a href="{{=URL('default', 'search', args=int(page)+1) }}?q={{=request.vars.q}}" class="button">Next</a></li>
-				{{pass}}
-
-				<!-- &catQuery={{=request.vars.catQuery}}&yearQuery={{=request.vars.yearQuery}}&rateQuery={{=request.vars.rateQuery}} -->
-				
-			</ul>
+	{{import math}}
+	{{upper_limit = int(math.ceil(search_result['response']['numFound']/12.0))}}
+	{{if int(page)+9 < upper_limit:}}
+		{{for i in range(int(page)-1,int(page)+9):}}
+		<li><a href="{{=URL('default', 'search', args=i+1)}}?q={{=request.vars.q}}">{{=i+1}}</a></li>
+		{{pass}}
+	{{else:}}
+		{{for i in range(int(math.ceil(search_result['response']['numFound']/12.0))):}}
+		<li><a href="{{=URL('default', 'search', args=i+1)}}?q={{=request.vars.q}}">{{=i+1}}</a></li>
+		{{pass}}
+	{{pass}}
+	{{if int(math.ceil(search_result['response']['numFound']/12.0)) == int(page):}}
+	<li ><span href="#" class="button disabled">Next</span></li>
+	{{else:}}
+	<li><a href="{{=URL('default', 'search', args=int(page)+1) }}?q={{=request.vars.q}}" class="button">Next</a></li>
+	{{pass}}
+		<!-- &catQuery={{=request.vars.catQuery}}&yearQuery={{=request.vars.yearQuery}}&rateQuery={{=request.vars.rateQuery}} -->
+	</ul>
 </section>
-	
+{{pass}}
 </div>
 </div>
 
-<!-- Sidebar -->
+<!-- Filter Panel -->
 <div id="sidebar">
-<div class="inner">
-<!-- Menu -->
-<nav id="menu">
+	<div class="inner">
+	<!-- Menu -->
+	<nav id="menu">
 
-	<header class="">
-		<a href="{{=URL('default','index')}}"><h2>HOMEPAGE</h2></a><hr>
-	</header>
+		<header class="">
+			<a href="{{=URL('default','index')}}"><img class="logo" style="width: 20%;" src="{{=URL('static/template1','assets/images/logo4.png')}}" /></a><hr>
+		</header>
 
-	<!-- Form -->
+		<!-- Form -->
 		<form method="get" action="{{=URL('default', 'search')}}">
 			<div class="row uniform">
 				<div class="12u$ 12u$(xsmall)">
-					<input type="text" name="q" id="demo-name" placeholder="Search" />
+					<input type="text" name="q" id="demo-name" placeholder="Search" value="{{=request.vars.q}}"/>
 				</div>
 				<!-- Break -->
 				<div class="12u$">
 					<div class="select-wrapper">
 						<select name="catQuery" id="demo-category">
-
 							<option value="">Category</option>
-							<option value="Action">Action</option>
-							<option value="Drama">Drama</option>
-							<option value="Sci-Fi">Sci-Fi</option>
-							<option value="Adventure">Adventure</option>
-							<option value="Animation">Animation</option>
-							<option value="Horror">Horror</option>
-							<option value="Fantasy">Fantasy</option>
-							<option value="Comedy">Comedy</option>
-							<option value="Thriller">Thriller</option>
+						{{for i in range(len(search_result['facet_counts']['facet_fields']['genre'])):}}
+							{{if i%2 == 0:}}
+							<option value="{{=search_result['facet_counts']['facet_fields']['genre'][i]}}">{{=search_result['facet_counts']['facet_fields']['genre'][i]}} ({{=search_result['facet_counts']['facet_fields']['genre'][i+1]}})</option>
+							{{pass}}
+						{{pass}}
 
 						</select>
 					</div>
 				</div>
 				<div class="4u 12u$(small)">
-					<input type="radio" id="demo-priority-low" name="yearQuery" value="[1949 TO 1999]"> <!--checked-->
+					<input type="radio" id="demo-priority-low" name="yearQuery" value="[1900 TO 1999]"> <!--checked-->
 					<label for="demo-priority-low">1900s</label>
 				</div>
 				<div class="4u 12u$(small)">
@@ -144,12 +139,7 @@
 				</div>
 			</div>
 		</form>
-
-
-
-</nav>
-
-
+	</nav>
 </div>
 </div>
 
