@@ -16,13 +16,13 @@
           <section id="contact">
             <div class="inner">
               
-              <form method="post" action="#" align="center">
+              <form method="get" action="{{=URL('default', 'search')}}" align="center">
                 <div class="field">
                   <!-- <h1>IMDb</h1> -->
-                  <img class="logo" src="{{=URL('static/template1','assets/images/logo.png')}}" />
-                  <label for="name" style="margin-bottom: 20px;">Search and Discover about 2500+ TV Series</label>
+                  <img class="logo" src="{{=URL('static/template1','assets/images/logo4.png')}}" />
+                  <label for="name" style="margin-top:-20px;margin-bottom: 20px;">Search and Discover about 2500+ TV Series</label>
                   
-                  <input type="text" name="name" id="name" placeholder="e.g: The Walking Dead" />
+                  <input type="text" name="q" id="name" placeholder="e.g: The Walking Dead" />
                 </div>
                 
                 <ul class="actions" align="center">
@@ -34,6 +34,18 @@
               
             </div>
           </section>
+          <!-- Footer -->
+      <footer id="footer">
+        <ul class="icons">
+          <li><a href="https://www.twitter.com/chnselim" class="icon fa-twitter" target="_blank"><span class="label">Twitter</span></a></li>
+          <li><a href="https://www.instagram.com/chnselim" class="icon fa-instagram" target="_blank"><span class="label">Instagram</span></a></li>
+          <li><a href="https://www.github.com/chnselim" class="icon fa-github" target="_blank"><span class="label">GitHub</span></a></li>
+          <li><a href="#" class="icon fa-envelope-o"><span class="label">Email</span></a></li>
+        </ul>
+        <ul class="copyright">
+          <li>&copy; Cihan SELİM</li><li><a href="http://html5up.net">HTML5 UP</a></li>
+        </ul>
+      </footer>
 
       </div>
 
