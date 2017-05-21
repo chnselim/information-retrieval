@@ -47,24 +47,24 @@
 	{{if int(page) == 1:}}
 		<li ><span href="#" class="button disabled">Prev</span></li>
 	{{else:}}
-		<li ><a href="{{=URL('default', 'search', args=int(page)-1) }}?q={{=request.vars.q}}"><span class="button">Prev</span></a></li>
+		<li ><a href="{{=URL('default', 'search', args=int(page)-1) }}?q={{=request.vars.q}}&catQuery={{=request.vars.catQuery or ''}}&yearQuery={{=request.vars.yearQuery or ''}}&rateQuery={{=request.vars.rateQuery or ''}}"><span class="button">Prev</span></a></li>
 	{{pass}}
 
 	{{import math}}
 	{{upper_limit = int(math.ceil(search_result['response']['numFound']/12.0))}}
 	{{if int(page)+9 < upper_limit:}}
 		{{for i in range(int(page)-1,int(page)+9):}}
-		<li><a href="{{=URL('default', 'search', args=i+1)}}?q={{=request.vars.q}}">{{=i+1}}</a></li>
+		<li><a href="{{=URL('default', 'search', args=i+1)}}?q={{=request.vars.q}}&catQuery={{=request.vars.catQuery or ''}}&yearQuery={{=request.vars.yearQuery or ''}}&rateQuery={{=request.vars.rateQuery or ''}}">{{=i+1}}</a></li>
 		{{pass}}
 	{{else:}}
 		{{for i in range(int(math.ceil(search_result['response']['numFound']/12.0))):}}
-		<li><a href="{{=URL('default', 'search', args=i+1)}}?q={{=request.vars.q}}">{{=i+1}}</a></li>
+		<li><a href="{{=URL('default', 'search', args=i+1)}}?q={{=request.vars.q}}&catQuery={{=request.vars.catQuery or ''}}&yearQuery={{=request.vars.yearQuery or ''}}&rateQuery={{=request.vars.rateQuery or ''}}">{{=i+1}}</a></li>
 		{{pass}}
 	{{pass}}
 	{{if int(math.ceil(search_result['response']['numFound']/12.0)) == int(page):}}
 	<li ><span href="#" class="button disabled">Next</span></li>
 	{{else:}}
-	<li><a href="{{=URL('default', 'search', args=int(page)+1) }}?q={{=request.vars.q}}" class="button">Next</a></li>
+	<li><a href="{{=URL('default', 'search', args=int(page)+1) }}?q={{=request.vars.q}}&catQuery={{=request.vars.catQuery or ''}}&yearQuery={{=request.vars.yearQuery or ''}}&rateQuery={{=request.vars.rateQuery or ''}}" class="button">Next</a></li>
 	{{pass}}
 		<!-- &catQuery={{=request.vars.catQuery}}&yearQuery={{=request.vars.yearQuery}}&rateQuery={{=request.vars.rateQuery}} -->
 	</ul>
